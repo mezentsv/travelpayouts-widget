@@ -23,6 +23,7 @@
   display: block;
   min-width: 200px;
   max-width: 1024px;
+  min-height: 100px;
   background-color: var(--color-primary-0);
   color: var(--color-text);
   font-family: var(--font);

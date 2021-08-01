@@ -6,11 +6,13 @@ import { Icon } from './Icon';
 
 import style from './datepicker.css';
 
+export type dpName = 'depart-date' | 'return-date';
+
 interface DatePickerProps {
-  name: string;
+  name: dpName;
   placeholder: string;
   value?: string;
-  onChange: (name: string, date: string) => void;
+  onChange: (name: dpName, date: string) => void;
 }
 
 export const DatePicker = ({ name, value, placeholder, onChange }: DatePickerProps) => {
@@ -31,7 +33,7 @@ export const DatePicker = ({ name, value, placeholder, onChange }: DatePickerPro
     if (type === 'calendar') {
       toggleCalendar();
     } else {
-      setDate(null);
+      handleDateChange('');
     }
   };
 
