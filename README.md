@@ -1,8 +1,8 @@
 # Travelpayouts Test Task - Widget
 
-This is a test task implementaion for Aviasales(Travelpayouts) Frontend position. The goal is to build web UI widget that can be embedded into 3rd party website. The task description can be found and markup 👉 [here](https://github.com/KosyanMedia/Front-end_TP_test).
+This is a test task implementaion for Aviasales(Travelpayouts) Frontend position. The goal is to build web UI widget that can be embedded into 3rd party website. The task description can be found and markup 👉&nbsp; [here](https://github.com/KosyanMedia/Front-end_TP_test).
 
-Two articles by Jenya Y. served as a main reference and guideline. See the walkthough for details: 👉 [here](https://blog.jenyay.com/building-javascript-widget/) and 👉 [here](https://blog.jenyay.com/web-ui-widget/)
+Two articles by Jenya Y. served as a main reference and guideline. See the walkthough for details: 👉&nbsp; [here](https://blog.jenyay.com/building-javascript-widget/) and 👉&nbsp; [here](https://blog.jenyay.com/web-ui-widget/)
 
 This structure provides those advantages:
 
@@ -10,13 +10,13 @@ This structure provides those advantages:
 
 In order to embed the widget on the hosting page:
 
-1️⃣ Add the container element/elements that will hold the widget at the desired location and provide `travelpayouts-widget` class:
+1️⃣&nbsp; Add the container element/elements that will hold the widget at the desired location and provide `travelpayouts-widget` class:
 
 ```html
 <div class="travelpayouts-widget"></div>
 ```
 
-2️⃣ Add the following snippet at any location:
+2️⃣&nbsp; Add the following snippet at any location:
 
 ```html
 <script>
