@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import { StateUpdater } from 'preact/hooks';
 import { CALENDAR_MONTHS, getNextMonth, getPreviousMonth } from './helpers';
 
 import style from './calendar.css';
@@ -6,27 +7,27 @@ import style from './calendar.css';
 interface MonthAndYearProps {
   month: number;
   year: number;
-  handleChange: (
-    newValues: Partial<{
-      today: Date;
-      current: Date;
-      month: number;
-      year: number;
-    }>
-  ) => void;
+  handleChange: StateUpdater<{
+    today: Date;
+    current: Date;
+    month: number;
+    year: number;
+  }>;
 }
 
 export const MonthAndYear = ({ month, year, handleChange }: MonthAndYearProps) => {
   // Resolve the month name from the CALENDAR_MONTHS object map
   const monthname = CALENDAR_MONTHS[month - 1];
 
-  const gotoPreviousMonth = () => handleChange(getPreviousMonth(month, year));
+  const gotoPreviousMonth = () =>
+    handleChange((prevState) => ({ ...prevState, ...getPreviousMonth(prevState.month, prevState.year) }));
 
-  const gotoNextMonth = () => handleChange(getNextMonth(month, year));
+  const gotoNextMonth = () =>
+    handleChange((prevState) => ({ ...prevState, ...getNextMonth(prevState.month, prevState.year) }));
 
-  const gotoPreviousYear = () => handleChange({ year: year - 1 });
+  const gotoPreviousYear = () => handleChange((prevState) => ({ ...prevState, year: prevState.year - 1 }));
 
-  const gotoNextYear = () => handleChange({ year: year + 1 });
+  const gotoNextYear = () => handleChange((prevState) => ({ ...prevState, year: prevState.year + 1 }));
 
   const handlePrevious = (evt: MouseEvent | KeyboardEvent) => (evt.shiftKey ? gotoPreviousYear() : gotoPreviousMonth());
 

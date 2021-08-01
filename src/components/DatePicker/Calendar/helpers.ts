@@ -39,7 +39,7 @@ export const getFirstDayOfTheMonth = (month = THIS_MONTH, year = THIS_YEAR) =>
   new Date(`${year}-${zeroPad(month, 2)}-01`).getDay() + 1;
 
 // (bool) Checks if a value is a date - this is just a simple check
-export const isDate = (date?: Date) => {
+export const isDate = (date: Date | null) => {
   const isDateObj = Object.prototype.toString.call(date) === '[object Date]';
   const isValidDate = date && !Number.isNaN(date.valueOf());
 

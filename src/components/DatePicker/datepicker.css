@@ -12,5 +12,15 @@
 .dpd :global(input):focus-visible {
   outline: none;
   offset: none;
-  border: 2px solid var(--color-btn);
+  border: 2px solid var(--color-secondary-0);
+}
+
+.icon {
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 }

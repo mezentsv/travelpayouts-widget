@@ -7,7 +7,7 @@ import { CalendarDate } from './CalendarDate';
 
 import style from './calendar.css';
 
-const resolveStateFromDate = (date?: Date) => {
+const resolveStateFromDate = (date: Date | null) => {
   const d = isDate(date) ? (date as Date) : new Date();
   return {
     current: d,
@@ -17,7 +17,7 @@ const resolveStateFromDate = (date?: Date) => {
 };
 
 interface CalendarProps {
-  date?: Date;
+  date: Date | null;
   onDateChanged: (dateStr: string) => void;
   toggleCalendar: () => void;
 }
@@ -31,13 +31,15 @@ export const Calendar = ({ date, onDateChanged, toggleCalendar }: CalendarProps)
       return toggleCalendar();
     }
 
-    if (calendarRef.current && calendarRef.current.contains(e.target as Node)) {
+    if (calendarRef.current && !calendarRef.current.contains(e.target as Node)) {
       toggleCalendar();
     }
   };
 
-  const handleMonthAndYearChange = (newVals: Partial<typeof state>) =>
+  const handleMonthAndYearChange = (newVals: Partial<typeof state>) => {
+    console.log(newVals);
     setState((prevState) => ({ ...prevState, newVals }));
+  };
 
   useEffect(() => {
     document.addEventListener('keydown', checkClickOutside, true);
@@ -67,7 +69,7 @@ export const Calendar = ({ date, onDateChanged, toggleCalendar }: CalendarProps)
   return (
     <div className={style.calendar}>
       <div ref={calendarRef}>
-        <MonthAndYear month={state.month} year={state.year} handleChange={handleMonthAndYearChange} />
+        <MonthAndYear month={state.month} year={state.year} handleChange={setState} />
         <DayLabels />
         <CalendarDate {...state} onDateChange={gotoDate} />
       </div>

@@ -2,10 +2,10 @@
 
 .scope {
   --border-radius: 2px;
-  --color: #0c73fe;
-  --color-bg: #4a90e2;
+  --color-primary-0: #4a90e2;
+  --color-primary-1: #0c73fe;
+  --color-secondary-0: #f5a623;
   --color-text: #fff;
-  --color-btn: #f5a623;
   --color-text-secondary: #9b9b9b;
   --color-error: #cb2431;
   --hover-brightness: 105%;
@@ -24,7 +24,7 @@
   min-width: 200px;
   max-width: 1024px;
   height: 100px;
-  background-color: var(--color-bg);
+  background-color: var(--color-primary-0);
   color: var(--color-text);
   font-family: var(--font);
   padding: 10px 20px 15px;
