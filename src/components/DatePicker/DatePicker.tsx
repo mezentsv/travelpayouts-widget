@@ -40,9 +40,17 @@ export const DatePicker = ({ name, value, placeholder, onChange }: DatePickerPro
   }, [value]);
 
   return (
-    <div className={style.dpd}>
-      <input type="text" value={formatDate(date)} readOnly={true} placeholder={placeholder} onClick={toggleCalendar} />
-      <Icon color="#4a90e2" onClick={handleIconClick} type={date ? 'clear' : 'calendar'} />
+    <div className={[style.dpd, 'layout-dpd'].join(' ')}>
+      <div className={style.inputContainer}>
+        <input
+          type="text"
+          value={formatDate(date)}
+          readOnly={true}
+          placeholder={placeholder}
+          onClick={toggleCalendar}
+        />
+        <Icon color="#4a90e2" onClick={handleIconClick} type={date ? 'clear' : 'calendar'} />
+      </div>
       {calendarOpen && (
         <Calendar
           date={date ? new Date(date) : null}

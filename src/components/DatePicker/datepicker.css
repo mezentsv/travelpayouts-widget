@@ -30,3 +30,9 @@
   width: 20px;
   height: 20px;
 }
+
+.inputContainer {
+  position: relative;
+  display: block;
+  height: 100%;
+}

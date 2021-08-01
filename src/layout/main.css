@@ -75,6 +75,11 @@ Layout Styles
   grid-area: 3 / 1 / 4 / 3;
 }
 
+.root:global(.tpw-layout-s) .widgetGrid,
+.root:global(.tpw-layout-xs) .widgetGrid {
+  position: relative;
+}
+
 .root:global(.tpw-layout-s) .title,
 .root:global(.tpw-layout-xs) .title {
   font-size: var(--title-size-1);
@@ -90,6 +95,27 @@ Layout Styles
 
 .root:global(.tpw-layout-xs) .description {
   order: 4;
+}
+
+.root:global(.tpw-layout-s) :global(.layout-dpd),
+.root:global(.tpw-layout-xs) :global(.layout-dpd) {
+  position: unset;
+}
+
+.root:global(.tpw-layout-s) :global(.layout-calendar) {
+  top: 98px;
+  left: 0px;
+}
+
+.root:global(.tpw-layout-xs) :global(.layout-calendar) {
+  top: 98px;
+  left: -20px;
+  right: -20px;
+}
+
+.root:global(.tpw-layout-xs) :global(.layout-calendar) {
+  max-width: 286px;
+  width: unset;
 }
 
 /* =======

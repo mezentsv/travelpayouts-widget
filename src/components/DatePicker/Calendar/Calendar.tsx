@@ -67,7 +67,7 @@ export const Calendar = ({ date, onDateChanged, toggleCalendar }: CalendarProps)
   };
 
   return (
-    <div className={style.calendar}>
+    <div className={[style.calendar, 'layout-calendar'].join(' ')}>
       <div ref={calendarRef}>
         <MonthAndYear month={state.month} year={state.year} handleChange={setState} />
         <DayLabels />
