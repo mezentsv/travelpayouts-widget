@@ -46,7 +46,7 @@ Color and font configurations can be passed to widget like so:
 ### Examples:
 
 - Default:
-  ![Default Configuration Widget Screenshot](https://github.com/mezentsv/travelpayouts-widget/tree/main/src/screenshots/customized-widget.png)
+  ![Default Configuration Widget Screenshot](https://raw.githubusercontent.com/mezentsv/travelpayouts-widget/main/screenshots/default-widget.png)
 
 ###
 
@@ -64,9 +64,7 @@ Color and font configurations can be passed to widget like so:
 +      });
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Custom Configuration Widget Screenshot](https://github.com/mezentsv/travelpayouts-widget/tree/main/src/screenshots/default-widget.png)
-
-##
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Custom Configuration Widget Screenshot](https://raw.githubusercontent.com/mezentsv/travelpayouts-widget/main/screenshots/customized-widget.png)
 
 The full list of configurations can be found in `AppConfigurations` interface of `src/models.ts` file.
 
