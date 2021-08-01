@@ -23,11 +23,10 @@
   display: block;
   min-width: 200px;
   max-width: 1024px;
-  height: 100px;
   background-color: var(--color-primary-0);
   color: var(--color-text);
   font-family: var(--font);
-  padding: 10px 20px 15px;
+  padding: 0px 20px 15px 20px;
 }
 
 .title {
@@ -36,10 +35,63 @@
   font-family: inherit;
   font-weight: 600;
   color: inherit;
+  margin-bottom: 10px;
 }
 
 .description {
   font-size: var(--text-size-0);
-  font-family: inherit;
   color: inherit;
 }
+
+/* =======
+Layout Styles
+======= */
+
+.widgetGrid {
+  color: inherit;
+  display: grid;
+  -moz-column-gap: 20px;
+  gap: 15px 20px;
+  grid-template-columns: 1.42fr 1fr 1fr 1.2fr;
+}
+
+.root:global(.tpw-layout-m) .widgetGrid {
+  grid-template-columns: 1fr 1fr 0.92fr;
+}
+
+.root:global(.tpw-layout-m) .description {
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+.root:global(.tpw-layout-s) .widgetGrid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.root:global(.tpw-layout-s) .description {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.root:global(.tpw-layout-s) :global(.layout-btn) {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+.root:global(.tpw-layout-s) .title,
+.root:global(.tpw-layout-xs) .title {
+  font-size: var(--title-size-1);
+}
+.root:global(.tpw-layout-s),
+.root:global(.tpw-layout-xs) {
+  padding: 10px 20px 15px;
+}
+
+.root:global(.tpw-layout-xs) .widgetGrid {
+  grid-template-columns: 1fr;
+}
+
+.root:global(.tpw-layout-xs) .description {
+  order: 4;
+}
+
+/* =======
+End Layout Styles
+======= */

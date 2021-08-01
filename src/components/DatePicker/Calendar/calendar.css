@@ -23,10 +23,9 @@
 .calendar {
   position: absolute;
   display: flex;
-  top: 31px;
+  top: 44px;
   left: 0;
-  min-width: 300px;
-  font-family: var(--font);
+  max-width: 300px;
   background-color: #fff;
   border-radius: var(--border-radius);
   padding: 1rem;
@@ -64,7 +63,6 @@
 }
 
 .monthYearLabel {
-  font-family: var(--font);
   color: var(--color-primary-1);
   white-space: nowrap;
   font-weight: 600;
@@ -77,7 +75,6 @@
 }
 .dayLabel {
   color: var(--color-text-secondary);
-  font-family: var(--font);
   flex-basis: 14.2857%;
   min-width: 14.2857%;
   text-align: center;
@@ -97,7 +94,6 @@
   justify-content: center;
   padding: 0.5rem 0;
   font-size: 0.8rem;
-  font-family: var(--font);
   font-weight: 600;
   color: var(--color-primary-1);
   cursor: pointer;
