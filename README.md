@@ -46,7 +46,7 @@ Color and font configurations can be passed to widget like so:
 ### Examples:
 
 - Default:
-  ![Default Configuration Widget Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+  ![Default Configuration Widget Screenshot](https://github.com/mezentsv/travelpayouts-widget/tree/main/src/screenshots/customized-widget.png)
 
 ###
 
@@ -64,7 +64,7 @@ Color and font configurations can be passed to widget like so:
 +      });
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Custom Configuration Widget Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Custom Configuration Widget Screenshot](https://github.com/mezentsv/travelpayouts-widget/tree/main/src/screenshots/default-widget.png)
 
 ##
 
