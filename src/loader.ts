@@ -50,7 +50,7 @@ export default (
   }
 
   // this will an root element of the widget instance
-  let targetElement: HTMLElement;
+  let targetElement: NodeListOf<HTMLElement>;
 
   // iterate over all methods that were called up until now
   for (let i = 0; i < loaderObject.q.length; i++) {
@@ -71,9 +71,9 @@ export default (
 
         // the actual rendering of the widget
         const wrappingElement = loadedObject.element ?? win.document.body;
-        targetElement = wrappingElement.querySelector('.travelpayouts-widget') as HTMLElement;
-        targetElement.setAttribute('id', `widget-${instanceName}`);
-        render(targetElement, loadedObject);
+        targetElement = wrappingElement.querySelectorAll<HTMLElement>('.travelpayouts-widget');
+        targetElement.forEach((el, id) => el.setAttribute('id', `widget-${instanceName}-${id}`));
+        targetElement.forEach((el) => render(el, loadedObject));
 
         // store indication that widget instance was initialized
         win[`loaded-${instanceName}`] = true;
@@ -88,7 +88,10 @@ export default (
   win[instanceName] = (method: MethodNames, ...args: any[]) => {
     switch (method) {
       case 'event': {
-        targetElement?.dispatchEvent(new CustomEvent('widget-event', { detail: { name: args?.[0] } }));
+        targetElement.length &&
+          targetElement.forEach((el) => {
+            el.dispatchEvent(new CustomEvent('widget-event', { detail: { name: args?.[0] } }));
+          });
         break;
       }
       default:

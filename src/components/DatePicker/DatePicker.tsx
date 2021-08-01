@@ -18,7 +18,6 @@ interface DatePickerProps {
 export const DatePicker = ({ name, value, placeholder, onChange }: DatePickerProps) => {
   const [date, setDate] = useState<string | null>(null);
   const [calendarOpen, setCalendarOpen] = useState(false);
-  console.log(date);
   const toggleCalendar = () => {
     setCalendarOpen((prevState) => !prevState);
   };
@@ -53,7 +52,7 @@ export const DatePicker = ({ name, value, placeholder, onChange }: DatePickerPro
           placeholder={placeholder}
           onClick={toggleCalendar}
         />
-        <Icon color="#4a90e2" onClick={handleIconClick} type={date ? 'clear' : 'calendar'} />
+        <Icon color="var(--color-primary-1)" onClick={handleIconClick} type={date ? 'clear' : 'calendar'} />
       </div>
       {calendarOpen && (
         <Calendar

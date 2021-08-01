@@ -12,6 +12,7 @@
   --hover-opacity: 0.5;
   --line-height: 150%;
   --font: 'Open Sans', arial, sans-serif;
+  --font-title: 'Open Sans', arial, sans-serif;
   --title-size-0: 1.5rem;
   --title-size-1: 1.125rem;
   --text-size-0: 0.625rem;
@@ -33,7 +34,7 @@
 .title {
   display: block;
   font-size: var(--title-size-0);
-  font-family: inherit;
+  font-family: var(--font-title);
   font-weight: 600;
   color: inherit;
   margin-bottom: 10px;

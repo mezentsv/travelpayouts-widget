@@ -8,12 +8,7 @@ import { Configurations } from './models';
  * parameters in embedded script.
  */
 const defaultConfig: Configurations = {
-  debug: false,
-  serviceBaseUrl: 'https://help-widget-backend.glitch.me',
-  minimized: false,
-  disableDarkMode: false,
-  text: {},
-  styles: {}
+  debug: false
 };
 
 // main entry point - calls loader and render Preact app into supplied element

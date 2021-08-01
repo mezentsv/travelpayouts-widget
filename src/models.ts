@@ -1,5 +1,5 @@
 interface InfraConfigurations {
-    element?: HTMLElement;
+  element?: HTMLElement;
 }
 
 /**
@@ -7,42 +7,17 @@ interface InfraConfigurations {
  * that can be done from embedded script. Those settings
  * are passed around in application via Context.
  */
+
+export type Palette = Partial<{ [key in 'primary' | 'secondary' | 'text']: PaletteColor }> | undefined;
+type PaletteColor = Partial<{ zero: string; one: string }>;
+
+export type Typography = Partial<{ [key in 'title' | 'text']: TypographyConfig }> | undefined;
+type TypographyConfig = Partial<{ font: string; size: Partial<{ [key in 'zero' | 'one']: string }> }>;
+
 export interface AppConfigurations {
-    debug: boolean;
-    serviceBaseUrl: string;
-    minimized: boolean;
-    disableDarkMode: boolean;
-    text: {
-        minimizedTitle?: string;
-        formTitle?: string;
-        formSubTitle?: string;
-        thankYouTitle?: string;
-        thankYouBody?: string;
-        faqTitle?: string;
-    };
-    styles: {
-        classNameContainer?: string;
-    };
+  debug: boolean;
+  palette?: Palette;
+  typography?: Typography;
 }
 
 export type Configurations = InfraConfigurations & AppConfigurations;
-
-export interface FaqModel {
-    question: string;
-    answer: string;
-}
-
-export interface FormModel {
-    email: string;
-    message: string;
-}
-
-export interface WidgetApi {
-    getFaq: () => Promise<FaqModel[]>;
-    sendForm: (model: FormModel) => Promise<void>;
-}
-
-export interface Globals {
-    widgetOpen: boolean;
-    setWidgetOpen: (open: boolean) => void;
-}
