@@ -1,0 +1,16 @@
+.dpd {
+  position: relative;
+}
+
+.dpd :global(input) {
+  border: 2px solid transparent;
+  font-family: var(--font);
+  border-radius: var(--border-radius);
+  padding: 10px;
+}
+
+.dpd :global(input):focus-visible {
+  outline: none;
+  offset: none;
+  border: 2px solid var(--color-btn);
+}

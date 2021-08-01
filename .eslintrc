@@ -1,0 +1,56 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:preact",
+    "airbnb-typescript",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": [
+      "./tsconfig.eslint.json"
+    ]
+  },
+  "plugins": [
+    "preact",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      1,
+      {
+        "selector": "enum",
+        "format": [
+          "UPPER_CASE"
+        ]
+      }
+    ],
+    "@typescript-eslint/no-use-before-define": "off",
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "react/require-default-props": "off",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "no-case-declarations": "off"
+  }
+}
