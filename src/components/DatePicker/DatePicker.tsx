@@ -33,7 +33,9 @@ export const DatePicker = ({ name, value, placeholder, onChange }: DatePickerPro
     if (type === 'calendar') {
       toggleCalendar();
     } else {
-      handleDateChange('');
+      setDate(null);
+      onChange('depart-date', '');
+      onChange('return-date', '');
     }
   };
 
