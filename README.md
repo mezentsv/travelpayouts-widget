@@ -53,7 +53,6 @@ Color and font configurations can be passed to widget like so:
 ```diff
 -_tpw('init');
 +_tpw('init', {
-+        debug: true,
 +        palette: {
 +          primary: { zero: '#50C9CE', one: '#445E93' },
 +          secondary: { zero: '#FCD3DE' },
