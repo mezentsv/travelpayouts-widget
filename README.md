@@ -1,10 +1,8 @@
 # Travelpayouts Test Task - Widget
 
-This is a test task implementaion for Aviasales(Travelpayouts) Frontend position. The goal is to build web UI widget that can be embedded into 3rd party website. The task description can be found and markup 👉&nbsp; [here](https://github.com/KosyanMedia/Front-end_TP_test).
+This is a test task implementaion for Aviasales(Travelpayouts) Frontend position. The goal is to build a web UI widget that can be embedded into 3rd party website. The task description along with the template can be found 👉&nbsp; [here](https://github.com/KosyanMedia/Front-end_TP_test).
 
 Two articles by Jenya Y. served as a main reference and guideline. See the walkthough for details: 👉&nbsp; [here](https://blog.jenyay.com/building-javascript-widget/) and 👉&nbsp; [here](https://blog.jenyay.com/web-ui-widget/)
-
-This structure provides those advantages:
 
 ## Usage
 
