@@ -2,7 +2,7 @@
 
 This is a test task implementaion for Aviasales(Travelpayouts) Frontend position. The goal is to build a web UI widget that can be embedded into 3rd party website. The task description along with the template can be found 👉&nbsp; [here](https://github.com/KosyanMedia/Front-end_TP_test).
 
-Two articles by Jenya Y. served as a main reference and guideline. See the walkthoughs for details: 👉&nbsp; [here](https://blog.jenyay.com/building-javascript-widget/) and 👉&nbsp; [here](https://blog.jenyay.com/web-ui-widget/)
+Two articles by [Jenya Y.](https://github.com/jenyayel) served as a main reference and guideline. See the walkthoughs for details: 👉&nbsp; [here](https://blog.jenyay.com/building-javascript-widget/) and 👉&nbsp; [here](https://blog.jenyay.com/web-ui-widget/)
 
 ## Usage
 
@@ -30,7 +30,7 @@ In order to embed the widget on the hosting page:
     js.async = 1;
     fjs.parentNode.insertBefore(js, fjs);
   })(window, document, 'script', '_tpw', './widget.js');
-  _hw('init');
+  _tpw('init');
 </script>
 ```
 
