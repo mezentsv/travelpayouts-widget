@@ -10,7 +10,7 @@
   --color-error: #cb2431;
   --hover-brightness: 105%;
   --hover-opacity: 0.5;
-  --line-height: 150%;
+  --line-height: 1.4;
   --font: 'Open Sans', arial, sans-serif;
   --font-title: 'Open Sans', arial, sans-serif;
   --title-size-0: 1.5rem;
@@ -25,17 +25,17 @@
   min-width: 200px;
   max-width: 1024px;
   min-height: 100px;
+  line-height: 1.4;
   background-color: var(--color-primary-0);
   color: var(--color-text);
   font-family: var(--font);
-  padding: 2px 20px 15px 20px;
+  padding: 3px 20px 15px 20px;
 }
 
 .title {
   display: block;
   font-size: var(--title-size-0);
   font-family: var(--font-title);
-  font-weight: 600;
   color: inherit;
   margin-bottom: 10px;
 }
@@ -75,6 +75,7 @@ Layout Styles
 
 .root:global(.tpw-layout-s) :global(.layout-btn) {
   grid-area: 3 / 1 / 4 / 3;
+  margin-top: 5px;
 }
 
 .root:global(.tpw-layout-s) .widgetGrid,
@@ -93,6 +94,10 @@ Layout Styles
 
 .root:global(.tpw-layout-xs) .widgetGrid {
   grid-template-columns: 1fr;
+}
+
+.root:global(.tpw-layout-xs) .title {
+  margin-bottom: 15px;
 }
 
 .root:global(.tpw-layout-xs) .description {
