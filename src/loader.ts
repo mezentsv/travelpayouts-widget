@@ -53,12 +53,13 @@ export default (
   let targetElement: NodeListOf<HTMLElement>;
 
   // iterate over all methods that were called up until now
-  for (let i = 0; i < loaderObject.q.length; i++) {
+  for (let i = 0; i < loaderObject.q.length; i += 1) {
     const item = loaderObject.q[i];
     const methodName = item[0];
     if (i === 0 && methodName !== 'init') {
       throw new Error(`Failed to start Widget [${instanceName}]. 'init' must be called before other methods.`);
     } else if (i !== 0 && methodName === 'init') {
+      // eslint-disable-next-line no-continue
       continue;
     }
 

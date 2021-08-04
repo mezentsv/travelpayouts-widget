@@ -28,7 +28,7 @@
   background-color: var(--color-primary-0);
   color: var(--color-text);
   font-family: var(--font);
-  padding: 0px 20px 15px 20px;
+  padding: 2px 20px 15px 20px;
 }
 
 .title {

@@ -3,7 +3,7 @@ import calendar, { isSameDay, isSameMonth } from './helpers';
 
 import style from './calendar.css';
 
-interface CalendarDate {
+interface CalendarDateProps {
   today: Date;
   current: Date;
   month: number;
@@ -11,7 +11,7 @@ interface CalendarDate {
   onDateChange: (e: MouseEvent) => void;
 }
 
-export const CalendarDate = ({ current, month, year, today, onDateChange }: CalendarDate) => (
+export const CalendarDate = ({ current, month, year, today, onDateChange }: CalendarDateProps) => (
   <div role="presentation" className={style.dateLabels} onMouseDown={onDateChange}>
     {calendar(month, year).map((d, index) => {
       const dateStr = d.join('-');

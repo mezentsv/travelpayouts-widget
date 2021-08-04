@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { useState, useEffect, useRef } from 'preact/hooks';
-import calendar, { isDate } from './helpers';
+import { isDate } from './helpers';
 import { MonthAndYear } from './MonthAndYear';
 import { DayLabels } from './DayLabels';
 import { CalendarDate } from './CalendarDate';
@@ -30,15 +30,9 @@ export const Calendar = ({ date, onDateChanged, toggleCalendar }: CalendarProps)
     if (e.type === 'keydown' && 'key' in e && e.key === 'Escape') {
       return toggleCalendar();
     }
-
     if (calendarRef.current && !calendarRef.current.contains(e.target as Node)) {
-      toggleCalendar();
+      return toggleCalendar();
     }
-  };
-
-  const handleMonthAndYearChange = (newVals: Partial<typeof state>) => {
-    console.log(newVals);
-    setState((prevState) => ({ ...prevState, newVals }));
   };
 
   useEffect(() => {
@@ -50,18 +44,14 @@ export const Calendar = ({ date, onDateChanged, toggleCalendar }: CalendarProps)
     };
   }, []);
 
-  const getCalendarDates = () => {
-    const { current, month, year } = state;
-    const calendarMonth = month || current.getMonth() + 1;
-    const calendarYear = year || current.getFullYear();
-    return calendar(calendarMonth, calendarYear);
-  };
-
   // Render a calendar date as returned from the calendar builder function
   // This method is used as a map callback as seen in render()
 
   const gotoDate = (e: Event) => {
-    const date = (e.target as unknown as { dataset: { date: string } }).dataset.date;
+    const {
+      dataset: { date }
+    } = e.target as unknown as { dataset: { date: string } };
+
     setState((prevState) => ({ ...prevState, ...resolveStateFromDate(new Date(date)) }));
     onDateChanged(date);
   };

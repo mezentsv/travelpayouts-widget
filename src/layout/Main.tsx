@@ -1,11 +1,12 @@
 import { h } from 'preact';
-import style from './main.css';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { useAppContext } from 'AppContext';
-import { getLayoutTag, INPUTS_BP } from './helpers/getLayoutTag';
 import { Button } from 'components/Button';
 import { DatePicker, dpName } from 'components/DatePicker';
 import getStylesFromConfig from './helpers/getStyles';
+
+import { getLayoutTag, INPUTS_BP } from './helpers/getLayoutTag';
+import style from './main.css';
 
 const getAviasalesLink = (dateFrom: string, dateTo: string) => {
   return `https://www.aviasales.ru/?depart_date=${dateFrom}&destination=HKT&origin=MOW&return_date=${dateTo}`;
@@ -16,8 +17,6 @@ const Main = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState<number>();
   const [dates, setDates] = useState({ 'depart-date': '', 'return-date': '' });
-
-  console.log(config.palette);
 
   const onResize = () => {
     setWidth(containerRef.current!.offsetWidth);
@@ -47,7 +46,7 @@ const Main = () => {
     >
       <h1 className={style.title}>Where does it come from? Why do we use it?</h1>
       <div className={style.widgetGrid}>
-        <p class={style.description}>
+        <p className={style.description}>
           It is a long established fact that a reader will be distracted by the readable content of a page when looking
           at its layout.
         </p>

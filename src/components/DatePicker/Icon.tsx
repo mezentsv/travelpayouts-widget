@@ -1,7 +1,4 @@
 import { h } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
-import { formatDate } from './helpers';
-import { Calendar, getDateISO } from './Calendar';
 
 import style from './datepicker.css';
 
@@ -13,7 +10,7 @@ interface IconProps {
 
 export const Icon = ({ type, color, onClick }: IconProps) => {
   return (
-    <button className={style.icon} onClick={() => onClick(type)}>
+    <button type="button" className={style.icon} onClick={() => onClick(type)}>
       {type === 'calendar' ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +22,7 @@ export const Icon = ({ type, color, onClick }: IconProps) => {
         >
           <title>Calendar</title>
           <defs />
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g id="TP-test-form" transform="translate(-505.000000, -287.000000)" fill={color}>
               <g id="Wide-form" transform="translate(50.000000, 200.000000)">
                 <g id="Input2" transform="translate(260.000000, 75.000000)">

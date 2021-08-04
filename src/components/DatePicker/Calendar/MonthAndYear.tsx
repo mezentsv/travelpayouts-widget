@@ -43,9 +43,9 @@ export const MonthAndYear = ({ month, year, handleChange }: MonthAndYearProps) =
           className={style.monthArrow}
           fill="none"
           stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
           viewBox="0 0 24 24"
         >
           <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -61,9 +61,9 @@ export const MonthAndYear = ({ month, year, handleChange }: MonthAndYearProps) =
           height="25"
           fill="none"
           stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
           className={style.monthArrow}
           viewBox="0 0 24 24"
         >

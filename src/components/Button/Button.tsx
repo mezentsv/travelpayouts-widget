@@ -9,6 +9,7 @@ interface ButtonProps {
 export const Button = ({ color, children, onClick }: ButtonProps) => {
   return (
     <button
+      type="submit"
       className={[style.button, 'layout-btn'].join(' ')}
       onClick={onClick}
       style={{

@@ -4,7 +4,7 @@
     "es2021": true
   },
   "extends": [
-    "plugin:preact",
+    "preact",
     "airbnb-typescript",
     "plugin:prettier/recommended"
   ],
@@ -16,7 +16,7 @@
     "ecmaVersion": 12,
     "sourceType": "module",
     "project": [
-      "./tsconfig.eslint.json"
+      "./tsconfig.json"
     ]
   },
   "plugins": [
@@ -24,15 +24,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "react/jsx-filename-extension": [
-      2,
-      {
-        "extensions": [
-          ".ts",
-          ".tsx"
-        ]
-      }
-    ],
+    "consistent-return": "off",
     "@typescript-eslint/naming-convention": [
       1,
       {
@@ -43,14 +35,21 @@
       }
     ],
     "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
     "no-param-reassign": "off",
     "no-restricted-syntax": "off",
-    "react/require-default-props": "off",
     "import/prefer-default-export": "off",
     "class-methods-use-this": "off",
-    "react/jsx-props-no-spreading": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "@typescript-eslint/no-shadow": "off",
-    "no-case-declarations": "off"
+    "no-case-declarations": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off"
+  },
+  "settings": {
+    "react": {
+      "pragma": "h",
+      "version": "latest"
+    }
   }
 }

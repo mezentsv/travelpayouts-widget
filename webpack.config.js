@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-var copyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const bundleOutputDir = './dist';
 
 module.exports = (env) => {
@@ -17,7 +18,7 @@ module.exports = (env) => {
         contentBase: bundleOutputDir
       },
       plugins: isDevBuild
-        ? [new webpack.SourceMapDevToolPlugin(), new copyWebpackPlugin({ patterns: [{ from: 'dev/' }] })]
+        ? [new webpack.SourceMapDevToolPlugin(), new CopyWebpackPlugin({ patterns: [{ from: 'dev/' }] })]
         : [],
       optimization: {
         minimize: !isDevBuild
@@ -63,7 +64,12 @@ module.exports = (env) => {
       },
       resolve: {
         extensions: ['*', '.js', '.ts', '.tsx'],
-        modules: [path.resolve('./node_modules'), path.resolve('./src')]
+        modules: [path.resolve('./node_modules'), path.resolve('./src')],
+        alias: {
+          react: 'preact/compat',
+          'react-dom/test-utils': 'preact/test-utils',
+          'react-dom': 'preact/compat'
+        }
       }
     }
   ];
